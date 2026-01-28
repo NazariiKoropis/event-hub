@@ -1,0 +1,28 @@
+// --- Core Brand Colors ---
+$primary-color: #4f46e5; // Indigo
+$primary-light: #818cf8;
+$primary-dark: #3730a3;
+
+$secondary-color: #f97316; // Vibrant Orange
+$secondary-hover: #ea580c; // Трохи темніший для кнопок
+
+// --- Neutral Palette (Text & BG) ---
+$bg-color: #f3f4f6; // Світлий сіро-блакитний
+$bg-card: #ffffff; // Для карток та блоків
+$text-main: #1f2937; // Майже чорний
+$text-muted: #6b7280; // Сірий для дат/описів
+$border-color: #e5e7eb; // Для розділювачів та рамок
+
+// --- UI Status Colors (Для твоїх статусів у БД) ---
+$color-success: #10b981; // Зелений (для "confirmed" або "active")
+$color-warning: #f59e0b; // Жовтий (для "pending")
+$color-danger: #ef4444; // Червоний (для "cancelled")
+
+// --- Spacing & Radius ---
+$border-radius: 8px;
+
+// --- Breakpoints ---
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;

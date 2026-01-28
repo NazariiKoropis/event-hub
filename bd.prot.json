@@ -1,0 +1,134 @@
+{
+    "users": {
+        "user_auth_1": {
+            "firstName": "Павло",
+            "lastName": "Звягін",
+            "email": "pavlo.z@gmail.com",
+            "role": "user",
+            "registeredAt": 1704067200000
+        },
+        "user_auth_2": {
+            "firstName": "Організатор",
+            "lastName": "EventHub",
+            "companyName": "TechEvents Ukraine",
+            "email": "info@techevents.ua",
+            "role": "organizer",
+            "registeredAt": 1704153600000
+        },
+        "user_auth_3": {
+            "firstName": "admin",
+            "lastName": "admin",
+            "email": "admin.admin@gmail.com",
+            "role": "admin",
+            "registeredAt": 1704240000000
+        }
+    },
+    "events": {
+        "event_id_001": {
+            "title": "React Summit Kyiv 2025",
+            "slug": "react-summit-kyiv-2025",
+            "organizerId": "user_auth_2",
+            "category": "IT",
+            "price": 1500,
+            "date": 1756540800000,
+            "cityName": "Kyiv",
+            "location": {
+                "address": "Паркова дорога, 16а",
+                "lat": 50.449,
+                "lng": 30.523
+            },
+            "description": "Велика конференція для React розробників. Спікери з усього світу.",
+            "totalTickets": 200,
+            "soldTickets": 45
+        },
+        "event_id_002": {
+            "title": "Jazz on the Roof",
+            "slug": "jazz-on-the-roof",
+            "organizerId": "user_auth_2",
+            "category": "Music",
+            "price": 450,
+            "date": 1748678400000,
+            "cityName": "Lviv",
+            "location": {
+                "address": "вул. Староєврейська, 10",
+                "lat": 49.840,
+                "lng": 24.029
+            },
+            "description": "Вечір джазу на даху у центрі Львова. Живий звук.",
+            "totalTickets": 100,
+            "soldTickets": 98
+        },
+        "event_id_003": {
+            "title": "Бізнес-сніданок: Стартапи",
+            "slug": "biznes-snidanok-startapy",
+            "organizerId": "user_auth_2",
+            "category": "Business",
+            "price": 200,
+            "date": 1735689600000,
+            "cityName": "Odesa",
+            "location": {
+                "address": "вул. Дерибасівська, 5",
+                "lat": 46.482,
+                "lng": 30.723
+            },
+            "description": "Нетворкінг для молодих підприємців. Кава та круасани включені.",
+            "totalTickets": 30,
+            "soldTickets": 5
+        }
+    },
+    "bookings": {
+        "booking_id_001": {
+            "userId": "user_auth_1",
+            "eventId": "event_id_002",
+            "eventTitle": "Jazz on the Roof",
+            "status": "confirmed",
+            "ticketCount": 2,
+            "totalPrice": 900,
+            "purchaseDate": 1709280000000
+        },
+        "booking_id_002": {
+            "userId": "user_auth_1",
+            "eventId": "event_id_001",
+            "eventTitle": "React Summit Kyiv 2025",
+            "status": "pending",
+            "ticketCount": 1,
+            "totalPrice": 1500,
+            "purchaseDate": 1709366400000
+        },
+        "booking_id_003": {
+            "userId": "user_auth_3",
+            "eventId": "event_id_002",
+            "eventTitle": "Jazz on the Roof",
+            "status": "confirmed",
+            "ticketCount": 1,
+            "totalPrice": 450,
+            "purchaseDate": 1709452800000
+        }
+    },
+    "reviews": {
+        "review_id_001": {
+            "eventId": "event_id_002",
+            "userId": "user_auth_1",
+            "userName": "Павло З.",
+            "rating": 5,
+            "comment": "Дуже атмосферно! Рекомендую.",
+            "createdAt": 1709539200000
+        },
+        "review_id_002": {
+            "eventId": "event_id_002",
+            "userId": "user_auth_3",
+            "userName": "Олена К.",
+            "rating": 4,
+            "comment": "Музика супер, але було трохи прохолодно.",
+            "createdAt": 1709625600000
+        },
+        "review_id_003": {
+            "eventId": "event_id_001",
+            "userId": "user_auth_1",
+            "userName": "Павло З.",
+            "rating": 5,
+            "comment": "Чекаю з нетерпінням, організація на рівні.",
+            "createdAt": 1709712000000
+        }
+    }
+}
