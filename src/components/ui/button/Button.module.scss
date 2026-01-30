@@ -1,0 +1,65 @@
+@use './../../../assets/styles/variables' as *;
+@use './../../../assets/styles/mixins' as *;
+
+.button {
+  font-size: 0.8rem;
+  border-radius: $border-radius;
+  padding: 6px 12px;
+
+  min-width: 100px;
+  width: auto;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+
+  white-space: nowrap;
+
+  &--primary {
+    background-color: $secondary-color;
+    color: #fff;
+
+    &:hover {
+      background-color: $secondary-hover;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+
+  @include tablet {
+    font-size: 1.1rem;
+    min-width: 120px;
+  }
+
+  @include laptop {
+    font-size: 1.2rem;
+    min-width: 150px;
+  }
+
+  @include desktop {
+    padding: 12px 20px;
+    min-width: 180px;
+  }
+}

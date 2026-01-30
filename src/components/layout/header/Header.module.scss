@@ -1,0 +1,87 @@
+@use './../../../assets/styles/variables' as *;
+@use './../../../assets/styles/mixins' as *;
+@use './../../../assets/styles/animation' as *;
+
+.header {
+  border: 1px solid black;
+  padding: 4px 8px;
+  @include mobile {
+    padding: 8px 16px;
+  }
+
+  @include tablet {
+    padding: 12px 20px;
+  }
+
+  @include laptop {
+    padding: 16px 24px;
+  }
+
+  @include desktop {
+    padding: 16px 32px;
+  }
+}
+
+.navDesktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventHubLogo {
+  width: 50px;
+  height: auto;
+
+  backface-visibility: visible;
+
+  &:hover {
+    animation-name: flip;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+}
+
+.userProfileLogo {
+  width: 50px;
+  height: auto;
+}
+
+.headerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerLink {
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s,
+    transform 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+    color: $primary-color;
+  }
+
+  &--active {
+    color: $primary-color;
+  }
+
+  @include mobile {
+    font-size: 1.2rem;
+  }
+
+  @include tablet {
+    font-size: 1.3rem;
+  }
+
+  @include laptop {
+    font-size: 1.4rem;
+  }
+
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}

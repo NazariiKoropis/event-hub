@@ -1,10 +1,11 @@
+import styles from './AboutUs.module.scss'
+//components
 import Container from '../../components/layout/container/Container'
-import styles from './Home.module.scss'
 
-export default function Home() {
+export default function AboutUs() {
   return (
     <Container>
-      <h2>home</h2>
+      <h2>AboutUs</h2>
     </Container>
   )
 }

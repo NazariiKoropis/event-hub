@@ -1,17 +1,22 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Container from './components/layout/container/Container'
+
+//components
 import Header from './components/layout/header/Header'
 import Footer from './components/layout/footer/Footer'
+//pages
 import Home from './pages/home/Home'
+import AboutUs from './pages/aboutUs/AboutUs'
+import UserProfile from './pages/users/userProfile/UserProfile'
 
 function App() {
   return (
     <BrowserRouter>
-      {' '}
       <Header />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/user-account" element={<UserProfile />}></Route>
         </Routes>
       </main>
       <Footer />
