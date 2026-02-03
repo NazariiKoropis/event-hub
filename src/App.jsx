@@ -5,6 +5,7 @@ import Header from './components/layout/header/Header'
 import Footer from './components/layout/footer/Footer'
 //pages
 import Home from './pages/home/Home'
+import Events from './pages/events/Events'
 import AboutUs from './pages/aboutUs/AboutUs'
 import UserProfile from './pages/users/userProfile/UserProfile'
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/user-account" element={<UserProfile />}></Route>
         </Routes>
       </main>
