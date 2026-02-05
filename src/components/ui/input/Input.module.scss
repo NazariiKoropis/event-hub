@@ -1,0 +1,98 @@
+@use './../../../assets/styles/variables' as *;
+@use './../../../assets/styles/mixins' as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 12px;
+  font-size: 1rem;
+  color: $text-main;
+  background-color: transparent;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+
+    & ~ .label {
+      top: 0;
+      transform: translateY(-50%) scale(0.9);
+      color: $primary-color;
+      background-color: $bg-card;
+      padding: 0 4px;
+    }
+  }
+
+  &--error {
+    border-color: $color-danger;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-danger, 0.1);
+      border-color: $color-danger;
+    }
+
+    &:focus ~ .label,
+    &:not(:placeholder-shown) ~ .label {
+      color: $color-danger;
+    }
+  }
+
+  &:disabled {
+    background-color: $bg-color;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: $text-muted;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+  background-color: transparent;
+  transform-origin: left top;
+}
+
+.errorMessage {
+  font-size: 0.8rem;
+  color: $color-danger;
+  margin-top: 2px;
+  animation: slideDown 0.2s ease-out;
+  padding-left: 4px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

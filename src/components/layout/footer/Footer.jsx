@@ -62,10 +62,20 @@ export default function Footer() {
               </li>
               <li className={styles.socials}>
                 {/* Тут можна буде додати іконки соцмереж пізніше */}
-                <a href="#" className={styles.socialLink}>
+                <a
+                  href="https://www.instagram.com/"
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Instagram
                 </a>
-                <a href="#" className={styles.socialLink}>
+                <a
+                  href="https://www.facebook.com/?locale=uk_UA"
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Facebook
                 </a>
               </li>

@@ -4,6 +4,9 @@ import Container from '../container/Container'
 import Button from '../../ui/button/Button'
 import Backdrop from '../../ui/backdrop/Backdrop'
 import Modal from '../../ui/modal/Modal'
+// auth
+import LoginForm from './../../auth/LoginForm'
+import SignUpForm from './../../auth/SignUpForm'
 // svg
 import EventHubLogo from './../icons/EventHubLogo'
 import UserProfileLogo from './../icons/UserProfileLogo'
@@ -16,6 +19,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [authMode, setAuthMode] = useState('login')
 
   const NAV_ITEMS = [
     { path: '/', label: 'Головна' },
@@ -26,6 +30,7 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   const openAuthModal = () => {
+    setAuthMode('login')
     setIsModalOpen(true)
     setIsMenuOpen(false)
   }
@@ -36,11 +41,14 @@ export default function Header() {
     setIsLoggedIn(true)
     setIsModalOpen(false)
   }
-
   const handleLogout = (e) => {
     e.preventDefault()
     setIsLoggedIn(false)
     closeMenu()
+  }
+
+  const switchAuthMode = () => {
+    setAuthMode((prevMode) => (prevMode === 'login' ? 'signup' : 'login'))
   }
 
   const getLinkClass = ({ isActive }) => {
@@ -154,12 +162,28 @@ export default function Header() {
           </nav>
 
           <Modal isOpen={isModalOpen} onClose={closeModal} title="Вхід на сайт">
-            <div
-              style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
-            >
-              <p>Тут буде форма логіну...</p>
+            <LoginForm />
+            <Button onClick={handleTempLogin}>Увійти (Тест)</Button>
+          </Modal>
 
-              <Button onClick={handleTempLogin}>Увійти (Тест)</Button>
+          {/* ... Modal ... */}
+          <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title={authMode === 'login' ? 'Вхід на сайт' : 'Реєстрація'}
+          >
+            {authMode === 'login' ? <LoginForm /> : <SignUpForm />}
+
+            {/* 4. Текст-перемикач */}
+            <div className={styles.authSwitch}>
+              <p>
+                {authMode === 'login'
+                  ? 'Ще не зареєстровані? '
+                  : 'Вже маєте акаунт? '}
+                <span onClick={switchAuthMode} className={styles.switchLink}>
+                  {authMode === 'login' ? 'Створити акаунт' : 'Увійти'}
+                </span>
+              </p>
             </div>
           </Modal>
         </nav>

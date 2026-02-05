@@ -1,0 +1,15 @@
+@use './../../assets/styles/variables' as *;
+@use './../../assets/styles/mixins' as *;
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}

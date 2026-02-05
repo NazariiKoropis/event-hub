@@ -171,3 +171,26 @@
     font-size: 1.5rem;
   }
 }
+
+.authSwitch {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: $text-main;
+
+  p {
+    margin: 0;
+  }
+}
+
+.switchLink {
+  color: $primary-color;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+}
