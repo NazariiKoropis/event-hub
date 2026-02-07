@@ -15,8 +15,16 @@ import CloseIcon from './../icons/CloseIcon'
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
+// services
+import { logoutUser } from './../../../services/auth.service'
+// context
+import { useAuth } from '../../../context/AuthContext'
+
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { currentUser } = useAuth()
+
+  const isLoggedIn = !!currentUser
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [authMode, setAuthMode] = useState('login')
@@ -29,21 +37,23 @@ export default function Header() {
 
   const closeMenu = () => setIsMenuOpen(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-  const openAuthModal = () => {
-    setAuthMode('login')
+
+  const openModal = (mode) => {
+    setAuthMode(mode)
     setIsModalOpen(true)
     setIsMenuOpen(false)
   }
 
   const closeModal = () => setIsModalOpen(false)
 
-  const handleTempLogin = () => {
-    setIsLoggedIn(true)
+  const handleAuthSuccess = (user) => {
+    console.log('Auth Success User:', user)
     setIsModalOpen(false)
   }
-  const handleLogout = (e) => {
+
+  const handleLogout = async (e) => {
     e.preventDefault()
-    setIsLoggedIn(false)
+    await logoutUser()
     closeMenu()
   }
 
@@ -97,22 +107,26 @@ export default function Header() {
             ))}
             <li>
               {isLoggedIn ? (
-                <NavLink to="/user-account">
-                  <UserProfileLogo className={styles.userProfileLogo} />
-                </NavLink>
+                <div className={styles.userMenu}>
+                  <NavLink to="/user-account">
+                    <UserProfileLogo className={styles.userProfileLogo} />
+                  </NavLink>
+                  <Button variant="ghost" onClick={handleLogout}>
+                    Log out
+                  </Button>
+                </div>
               ) : (
                 <div className={styles.headerButtons}>
-                  <Button variant="ghost" onClick={openAuthModal}>
+                  <Button variant="ghost" onClick={() => openModal('login')}>
                     Login
                   </Button>
-                  <Button onClick={openAuthModal}>Sign Up</Button>
+                  <Button onClick={() => openModal('signup')}>Sign Up</Button>
                 </div>
               )}
             </li>
           </ul>
 
           {/* --- MOBILE MENU --- */}
-
           <Backdrop isOpen={isMenuOpen} onClick={closeMenu} />
           <nav
             className={`${styles.burgerMenu} ${isMenuOpen ? styles['burgerMenu--open'] : ''}`}
@@ -138,43 +152,37 @@ export default function Header() {
               ))}
             </ul>
 
-            <div>
-              {isLoggedIn ? (
-                <div
-                  style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
-                >
-                  <NavLink to="/user-account" onClick={closeMenu}>
-                    <UserProfileLogo className={styles.userProfileLogo} />
-                  </NavLink>
-                  <Button variant="ghost" onClick={handleLogout}>
-                    Log out
-                  </Button>
-                </div>
-              ) : (
-                <div className={styles.headerButtons}>
-                  <Button variant="ghost" onClick={openAuthModal}>
-                    Login
-                  </Button>
-                  <Button onClick={openAuthModal}>Sign Up</Button>
-                </div>
-              )}
-            </div>
+            {isLoggedIn ? (
+              <div className={styles.userMenu}>
+                <NavLink to="/user-account" onClick={closeMenu}>
+                  <UserProfileLogo className={styles.userProfileLogo} />
+                </NavLink>
+                <Button variant="ghost" fullWidth onClick={handleLogout}>
+                  Log out
+                </Button>
+              </div>
+            ) : (
+              <div className={styles.headerButtons}>
+                <Button variant="ghost" onClick={() => openModal('login')}>
+                  Login
+                </Button>
+                <Button onClick={() => openModal('signup')}>Sign Up</Button>
+              </div>
+            )}
           </nav>
 
-          <Modal isOpen={isModalOpen} onClose={closeModal} title="Вхід на сайт">
-            <LoginForm />
-            <Button onClick={handleTempLogin}>Увійти (Тест)</Button>
-          </Modal>
-
-          {/* ... Modal ... */}
+          {/* --- Modal --- */}
           <Modal
             isOpen={isModalOpen}
             onClose={closeModal}
             title={authMode === 'login' ? 'Вхід на сайт' : 'Реєстрація'}
           >
-            {authMode === 'login' ? <LoginForm /> : <SignUpForm />}
+            {authMode === 'login' ? (
+              <LoginForm onLoginSuccess={handleAuthSuccess} />
+            ) : (
+              <SignUpForm onAuthSuccess={handleAuthSuccess} />
+            )}
 
-            {/* 4. Текст-перемикач */}
             <div className={styles.authSwitch}>
               <p>
                 {authMode === 'login'

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 //components
 import Header from './components/layout/header/Header'
@@ -11,7 +11,7 @@ import UserProfile from './pages/users/userProfile/UserProfile'
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <main>
         <Routes>
@@ -22,7 +22,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </>
   )
 }
 

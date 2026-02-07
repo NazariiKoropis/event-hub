@@ -6,10 +6,17 @@ import Input from './../ui/input/Input'
 
 //react
 import { useState } from 'react'
-export default function LoginForm() {
+
+//services
+import { loginUser } from '../../services/auth.service'
+
+export default function LoginForm({ onLoginSuccess }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  //login state
   const [errors, setErrors] = useState({ email: '', password: '' })
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -21,39 +28,42 @@ export default function LoginForm() {
     if (errors.password) setErrors({ ...errors, password: '' })
   }
 
-  const handleSubmit = (e) => {
+  const validateLocal = () => {
+    const newErrors = {}
+    if (!email) newErrors.email = 'Введіть email'
+    if (!password) newErrors.password = 'Введіть пароль'
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const newErrors = {}
+    if (!validateLocal()) return
+    setIsLoading(true)
+    setErrors({})
 
-    if (!email.trim()) {
-      newErrors.email = 'Введіть email'
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Некоректний формат email'
-    }
+    const { user, error } = await loginUser(email, password)
 
-    if (!password) {
-      newErrors.password = 'Введіть пароль'
+    setIsLoading(false)
+    if (error) {
+      setErrors({ form: error })
     } else {
-      if (password.length < 8) {
-        newErrors.password = 'Мінімум 8 символів'
-      } else if (!/\d/.test(password)) {
-        newErrors.password = 'Пароль має містити хоча б одну цифру'
-      } else if (!/[!@#$%^&*]/.test(password)) {
-        newErrors.password = 'Додайте спецсимвол (!@#$%^&*)'
-      }
+      console.log('Logged in user:', user)
+      if (onLoginSuccess) onLoginSuccess(user)
     }
-    setErrors(newErrors)
+  }
 
-    if (Object.keys(newErrors).length > 0) return
-
-    console.log('Форма успішно відправлена:', { email, password })
+  const handleTest = () => {
+    setEmail('admin@gmail.com')
+    setPassword('admin1')
   }
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
       <h2 className={styles.title}>Увійти до облікового запису</h2>
 
+      {errors.form && <div className={styles.globalError}>{errors.form}</div>}
       <Input
         type="email"
         name="email"
@@ -61,6 +71,7 @@ export default function LoginForm() {
         value={email}
         onChange={handleEmailChange}
         required
+        disabled={isLoading}
         error={errors.email}
       />
 
@@ -71,11 +82,14 @@ export default function LoginForm() {
         value={password}
         required
         onChange={handlePasswordChange}
+        disabled={isLoading}
         error={errors.password}
       />
 
-      <Button type="submit" fullWidth>
-        Увійти
+      <Button onClick={handleTest}>Test</Button>
+
+      <Button type="submit" fullWidth disabled={isLoading}>
+        {isLoading ? 'Вхід...' : 'Увійти'}
       </Button>
     </form>
   )

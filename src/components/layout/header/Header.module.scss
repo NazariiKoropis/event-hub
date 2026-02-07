@@ -1,6 +1,6 @@
-@use './../../../assets/styles/variables' as *;
-@use './../../../assets/styles/mixins' as *;
-@use './../../../assets/styles/animation' as *;
+@use "./../../../assets/styles/variables" as *;
+@use "./../../../assets/styles/mixins" as *;
+@use "./../../../assets/styles/animation" as *;
 
 .stickyHeader {
   position: sticky;
@@ -138,6 +138,11 @@
   gap: 8px;
 }
 
+.userMenu {
+  display: flex;
+  gap: 16px;
+}
+
 .headerLink {
   font-size: 1.1rem;
   font-weight: 600;
@@ -193,4 +198,21 @@
     color: $primary-dark;
     text-decoration: underline;
   }
+}
+
+.authSwitch {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: $text-main;
+}
+
+.globalError {
+  background-color: rgba($color-danger, 0.1);
+  color: $color-danger;
+  padding: 10px;
+  border-radius: $border-radius;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid $color-danger;
 }
