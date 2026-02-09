@@ -21,7 +21,7 @@ import { logoutUser } from './../../../services/auth.service'
 import { useAuth } from '../../../context/AuthContext'
 
 export default function Header() {
-  const { currentUser } = useAuth()
+  const { currentUser, userRole } = useAuth()
 
   const isLoggedIn = !!currentUser
 
@@ -34,6 +34,16 @@ export default function Header() {
     { path: '/events', label: 'Події' },
     { path: '/about-us', label: 'Про нас' },
   ]
+
+  // const USER_PATH = [
+  //   {path: '/user-profile', role: 'user'},
+  //   {path: '/org-profile', role: 'org'},
+  //   {path: '/admin', role: 'admin'}
+  // ]
+
+  // const changePath = () =>{
+
+  // }
 
   const closeMenu = () => setIsMenuOpen(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)

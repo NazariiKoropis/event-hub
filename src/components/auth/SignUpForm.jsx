@@ -8,7 +8,9 @@ import { signUpUser } from '../../services/auth.service'
 import { useState } from 'react'
 
 export default function SignUpForm({ onAuthSuccess }) {
-  const [name, setName] = useState('')
+  const [displayName, setDisplayName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -19,7 +21,9 @@ export default function SignUpForm({ onAuthSuccess }) {
   const validate = () => {
     const newErrors = {}
 
-    if (!name.trim()) newErrors.name = "Введіть ім'я"
+    if (!displayName.trim()) newErrors.displayName = 'Введіть превдонім'
+    if (!firstName.trim()) newErrors.firstName = "Введіть ім'я"
+    if (!lastName.trim()) newErrors.lastName = 'Введіть прізвище'
     if (!email) newErrors.email = 'Введіть email'
 
     if (!password) {
@@ -44,7 +48,13 @@ export default function SignUpForm({ onAuthSuccess }) {
     setIsLoading(true)
     setErrors({})
 
-    const { user, error } = await signUpUser(email, password, name)
+    const { user, error } = await signUpUser(
+      email,
+      password,
+      displayName,
+      firstName,
+      lastName,
+    )
 
     setIsLoading(false)
 
@@ -71,11 +81,29 @@ export default function SignUpForm({ onAuthSuccess }) {
       {errors.form && <div className={styles.globalError}>{errors.form}</div>}
 
       <Input
+        label="Псевдонім"
+        name="displayName"
+        value={displayName}
+        onChange={handleInputChange(setDisplayName, 'displayName')}
+        error={errors.displayName}
+        disabled={isLoading}
+      />
+
+      <Input
         label="Ім'я"
-        name="name"
-        value={name}
-        onChange={handleInputChange(setName, 'name')}
-        error={errors.name}
+        name="firstName"
+        value={firstName}
+        onChange={handleInputChange(setFirstName, 'firstName')}
+        error={errors.firstName}
+        disabled={isLoading}
+      />
+
+      <Input
+        label="Прізвище"
+        name="lastName"
+        value={lastName}
+        onChange={handleInputChange(setLastName, 'lastName')}
+        error={errors.lastName}
         disabled={isLoading}
       />
 
