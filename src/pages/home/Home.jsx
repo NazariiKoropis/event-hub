@@ -1,10 +1,13 @@
-import Container from '../../components/layout/container/Container'
+//styles
 import styles from './Home.module.scss'
+//compoments
+import Container from '../../components/layout/container/Container'
+import Hero from './blocks/hero/Hero'
 
 export default function Home() {
   return (
-    <Container>
-      <h2>home</h2>
-    </Container>
+    <main>
+      <Hero />
+    </main>
   )
 }

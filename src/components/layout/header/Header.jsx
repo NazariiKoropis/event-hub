@@ -35,15 +35,17 @@ export default function Header() {
     { path: '/about-us', label: 'Про нас' },
   ]
 
-  // const USER_PATH = [
-  //   {path: '/user-profile', role: 'user'},
-  //   {path: '/org-profile', role: 'org'},
-  //   {path: '/admin', role: 'admin'}
-  // ]
-
-  // const changePath = () =>{
-
-  // }
+  const getProfilePath = () => {
+    switch (userRole) {
+      case 'admin':
+        return '/admin'
+      case 'organization':
+        return '/org-profile'
+      case 'user':
+      default:
+        return '/user-profile'
+    }
+  }
 
   const closeMenu = () => setIsMenuOpen(false)
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -118,7 +120,7 @@ export default function Header() {
             <li>
               {isLoggedIn ? (
                 <div className={styles.userMenu}>
-                  <NavLink to="/user-account">
+                  <NavLink to={getProfilePath()}>
                     <UserProfileLogo className={styles.userProfileLogo} />
                   </NavLink>
                   <Button variant="ghost" onClick={handleLogout}>
@@ -164,7 +166,7 @@ export default function Header() {
 
             {isLoggedIn ? (
               <div className={styles.userMenu}>
-                <NavLink to="/user-account" onClick={closeMenu}>
+                <NavLink to={getProfilePath()} onClick={closeMenu}>
                   <UserProfileLogo className={styles.userProfileLogo} />
                 </NavLink>
                 <Button variant="ghost" fullWidth onClick={handleLogout}>

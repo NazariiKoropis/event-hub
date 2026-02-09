@@ -8,6 +8,7 @@ import Home from './pages/home/Home'
 import Events from './pages/events/Events'
 import AboutUs from './pages/aboutUs/AboutUs'
 import UserProfile from './pages/users/userProfile/UserProfile'
+import OrgProfile from './pages/users/orgProfile/OrgProfile'
 import Admin from './pages/admin/Admin'
 
 //routes
@@ -22,7 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/user-account" element={<UserProfile />} />
+          <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/org-profile" element={<OrgProfile />} />
           <Route
             path="admin"
             element={

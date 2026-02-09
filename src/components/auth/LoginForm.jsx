@@ -54,9 +54,18 @@ export default function LoginForm({ onLoginSuccess }) {
     }
   }
 
-  const handleTest = () => {
+  const handleTestAdmin = () => {
     setEmail('admin@gmail.com')
     setPassword('admin1')
+  }
+
+  const handleTestUser = () => {
+    setEmail('user@gmail.com')
+    setPassword('useruser1')
+  }
+  const handleTestOrg = () => {
+    setEmail('organization@gmail.com')
+    setPassword('organization1')
   }
 
   return (
@@ -86,7 +95,9 @@ export default function LoginForm({ onLoginSuccess }) {
         error={errors.password}
       />
 
-      <Button onClick={handleTest}>Test</Button>
+      <Button onClick={handleTestAdmin}>Test Admin</Button>
+      <Button onClick={handleTestUser}>Test user</Button>
+      <Button onClick={handleTestOrg}>Test org</Button>
 
       <Button type="submit" fullWidth disabled={isLoading}>
         {isLoading ? 'Вхід...' : 'Увійти'}
