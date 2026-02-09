@@ -1,5 +1,10 @@
-import styled from './Container.module.scss'
+//styles
+import styles from './Container.module.scss'
+
+//clsx
+import clsx from 'clsx'
 
 export default function Container({ className, children }) {
-  return <div className={styled.Container}>{children}</div>
+  const containerStyle = clsx(styles.Container, className)
+  return <div className={containerStyle}>{children}</div>
 }
