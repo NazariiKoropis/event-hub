@@ -1,15 +1,14 @@
 //styles
 import styles from './Home.module.scss'
 //compoments
-import Container from '../../components/layout/container/Container'
-import QuickCategory from './blocks/quickCategory/QuickCategory'
 import Hero from './blocks/hero/Hero'
-
+import QuickCategory from './blocks/quickCategory/QuickCategory'
+import FeaturedEvents from './blocks/featuredEvents/FeaturedEvents'
 export default function Home() {
   return (
     <main>
       <Hero />
-      <QuickCategory />{' '}
+      <QuickCategory /> <FeaturedEvents />
     </main>
   )
 }

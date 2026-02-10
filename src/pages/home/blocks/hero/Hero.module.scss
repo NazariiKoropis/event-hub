@@ -3,10 +3,9 @@
 
 .hero {
     background-image: url("./../../../../assets/home/hero-background.jpg");
-    background-position: 50% 75%;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     padding: 64px 0px;
 
     @include laptop {
