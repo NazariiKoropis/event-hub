@@ -1,0 +1,34 @@
+.section {
+    padding: 40px 0;
+}
+
+.title {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+// Кастомізація Swiper
+.swiperContainer {
+    padding-bottom: 40px;
+
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+        color: #ff6b6b;
+
+        &::after {
+            font-size: 24px;
+        }
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+        background-color: #ff6b6b;
+    }
+}
+
+.cardWrapper {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    background: white;
+}

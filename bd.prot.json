@@ -1,134 +1,105 @@
 {
-    "users": {
-        "user_auth_1": {
-            "firstName": "Павло",
-            "lastName": "Звягін",
-            "email": "pavlo.z@gmail.com",
-            "role": "user",
-            "registeredAt": 1704067200000
-        },
-        "user_auth_2": {
-            "firstName": "Організатор",
-            "lastName": "EventHub",
-            "companyName": "TechEvents Ukraine",
-            "email": "info@techevents.ua",
-            "role": "organizer",
-            "registeredAt": 1704153600000
-        },
-        "user_auth_3": {
-            "firstName": "admin",
-            "lastName": "admin",
-            "email": "admin.admin@gmail.com",
-            "role": "admin",
-            "registeredAt": 1704240000000
+    "bookings": {
+        "booking_id_001": {
+            "eventId": "event_id_002",
+            "eventTitle": "Jazz on the Roof",
+            "purchaseDate": 1709280000000,
+            "status": "confirmed",
+            "ticketCount": 2,
+            "totalPrice": 900,
+            "userId": "user_auth_1"
         }
     },
     "events": {
         "event_id_001": {
-            "title": "React Summit Kyiv 2025",
-            "slug": "react-summit-kyiv-2025",
-            "organizerId": "user_auth_2",
             "category": "IT",
-            "price": 1500,
-            "date": 1756540800000,
             "cityName": "Kyiv",
+            "date": 1785369600000,
+            "description": "Велика конференція для React розробників. Спікери з усього світу.",
             "location": {
                 "address": "Паркова дорога, 16а",
                 "lat": 50.449,
                 "lng": 30.523
             },
-            "description": "Велика конференція для React розробників. Спікери з усього світу.",
-            "totalTickets": 200,
-            "soldTickets": 45
+            "organizerId": "user_auth_2",
+            "price": 1500,
+            "slug": "react-summit",
+            "soldTickets": 45,
+            "status": "active",
+            "title": "React Summit Kyiv 2026",
+            "totalTickets": 200
         },
         "event_id_002": {
-            "title": "Jazz on the Roof",
-            "slug": "jazz-on-the-roof",
-            "organizerId": "user_auth_2",
             "category": "Music",
-            "price": 450,
-            "date": 1748678400000,
             "cityName": "Lviv",
+            "date": 1756540800000,
+            "description": "Вечір джазу на даху у центрі Львова. Живий звук.",
             "location": {
                 "address": "вул. Староєврейська, 10",
-                "lat": 49.840,
+                "lat": 49.84,
                 "lng": 24.029
             },
-            "description": "Вечір джазу на даху у центрі Львова. Живий звук.",
-            "totalTickets": 100,
-            "soldTickets": 98
+            "organizerId": "user_auth_2",
+            "price": 450,
+            "slug": "jazz-on-the-roof",
+            "soldTickets": 98,
+            "status": "active",
+            "title": "Jazz on the Roof",
+            "totalTickets": 100
         },
         "event_id_003": {
-            "title": "Бізнес-сніданок: Стартапи",
-            "slug": "biznes-snidanok-startapy",
-            "organizerId": "user_auth_2",
             "category": "Business",
-            "price": 200,
-            "date": 1735689600000,
             "cityName": "Odesa",
+            "date": 1743417600000,
+            "description": "Нетворкінг для молодих підприємців. Кава та круасани включені.",
             "location": {
                 "address": "вул. Дерибасівська, 5",
                 "lat": 46.482,
                 "lng": 30.723
             },
-            "description": "Нетворкінг для молодих підприємців. Кава та круасани включені.",
-            "totalTickets": 30,
-            "soldTickets": 5
-        }
-    },
-    "bookings": {
-        "booking_id_001": {
-            "userId": "user_auth_1",
-            "eventId": "event_id_002",
-            "eventTitle": "Jazz on the Roof",
-            "status": "confirmed",
-            "ticketCount": 2,
-            "totalPrice": 900,
-            "purchaseDate": 1709280000000
-        },
-        "booking_id_002": {
-            "userId": "user_auth_1",
-            "eventId": "event_id_001",
-            "eventTitle": "React Summit Kyiv 2025",
-            "status": "pending",
-            "ticketCount": 1,
-            "totalPrice": 1500,
-            "purchaseDate": 1709366400000
-        },
-        "booking_id_003": {
-            "userId": "user_auth_3",
-            "eventId": "event_id_002",
-            "eventTitle": "Jazz on the Roof",
-            "status": "confirmed",
-            "ticketCount": 1,
-            "totalPrice": 450,
-            "purchaseDate": 1709452800000
+            "organizerId": "user_auth_2",
+            "price": 200,
+            "slug": "biznes-snidanok-startapy",
+            "soldTickets": 5,
+            "status": "active",
+            "title": "Бізнес-сніданок: Стартапи",
+            "totalTickets": 30
         }
     },
     "reviews": {
         "review_id_001": {
-            "eventId": "event_id_002",
-            "userId": "user_auth_1",
-            "userName": "Павло З.",
-            "rating": 5,
             "comment": "Дуже атмосферно! Рекомендую.",
-            "createdAt": 1709539200000
-        },
-        "review_id_002": {
+            "createdAt": 1709539200000,
             "eventId": "event_id_002",
-            "userId": "user_auth_3",
-            "userName": "Олена К.",
-            "rating": 4,
-            "comment": "Музика супер, але було трохи прохолодно.",
-            "createdAt": 1709625600000
-        },
-        "review_id_003": {
-            "eventId": "event_id_001",
-            "userId": "user_auth_1",
-            "userName": "Павло З.",
             "rating": 5,
-            "comment": "Чекаю з нетерпінням, організація на рівні.",
-            "createdAt": 1709712000000
+            "userId": "user_auth_1",
+            "userName": "Павло З."
+        }
+    },
+    "users": {
+        "51o9b7E6aQPowkcB3RdnEkfweA82": {
+            "displayName": "organization",
+            "email": "organization@gmail.com",
+            "firstName": "organization",
+            "lastName": "organization",
+            "registeredAt": 1770562823459,
+            "role": "organization"
+        },
+        "HFRiUtZKrCfaIOaH0nans5Xnq6C2": {
+            "displayName": "user",
+            "email": "user@gmail.com",
+            "firstName": "user",
+            "lastName": "user",
+            "registeredAt": 1770562762810,
+            "role": "user"
+        },
+        "sspgOjY14UWp9TeFJvHooA0eNiq1": {
+            "displayName": "admin",
+            "email": "admin@gmail.com",
+            "firstName": "admin",
+            "lastName": "admin",
+            "registeredAt": 1770562686375,
+            "role": "admin"
         }
     }
 }

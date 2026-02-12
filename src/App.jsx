@@ -12,7 +12,7 @@ import OrgProfile from './pages/users/orgProfile/OrgProfile'
 import Admin from './pages/admin/Admin'
 
 //routes
-import ProtectedRoute from './routes/ProtectedRouste'
+import ProtectedRoute from './routes/ProtectedRoute'
 
 function App() {
   return (
