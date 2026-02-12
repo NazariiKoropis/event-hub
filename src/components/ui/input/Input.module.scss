@@ -1,5 +1,5 @@
-@use './../../../assets/styles/variables' as *;
-@use './../../../assets/styles/mixins' as *;
+@use "./../../../assets/styles/variables" as *;
+@use "./../../../assets/styles/mixins" as *;
 
 .inputWrapper {
   display: flex;
@@ -20,7 +20,7 @@
   padding: 12px 12px;
   font-size: 1rem;
   color: $text-main;
-  background-color: transparent;
+  background-color: white;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   outline: none;
