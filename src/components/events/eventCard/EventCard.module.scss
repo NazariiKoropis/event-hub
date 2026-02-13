@@ -1,3 +1,5 @@
+@use "./../../../assets/styles/variables" as *;
+
 .card {
     background: white;
     border-radius: 16px;
@@ -62,7 +64,7 @@
     margin-bottom: 8px;
 
     .icon {
-        color: #ff6b6b; // Акцентний колір
+        color: $secondary-color;
     }
 }
 

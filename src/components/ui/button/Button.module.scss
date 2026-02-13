@@ -1,5 +1,5 @@
-@use './../../../assets/styles/variables' as *;
-@use './../../../assets/styles/mixins' as *;
+@use "./../../../assets/styles/variables" as *;
+@use "./../../../assets/styles/mixins" as *;
 
 .button {
   font-size: 0.8rem;
@@ -61,5 +61,17 @@
   @include desktop {
     padding: 12px 20px;
     min-width: 180px;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #ccc;
+    }
   }
 }

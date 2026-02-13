@@ -1,0 +1,43 @@
+@use "./../../../../assets/styles/variables" as *;
+@use "./../../../../assets/styles/mixins" as *;
+
+.hero {
+    background-image: url("./../../../../assets/aboutus/hero-section-back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 48px 0px;
+
+    @include laptop {
+        padding: 96px 0px;
+    }
+}
+
+.glassContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+
+    padding: 20px;
+    text-align: center;
+
+    .title {
+        color: #fff;
+    }
+
+    .sub {
+        color: inherit;
+        font-weight: 700;
+    }
+}

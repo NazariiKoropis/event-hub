@@ -1,0 +1,106 @@
+@use "./../../../../assets/styles/variables" as *;
+
+.card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 24px;
+    height: 60vh;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.label {
+    color: $secondary-color;
+    font-size: 1rem;
+}
+
+.value {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 16px 0;
+}
+
+.counterWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f5f5f5;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.counterBtn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: white;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+    &:hover:not(:disabled) {
+        background: $secondary-color;
+        color: white;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.countDisplay {
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.totalPrice {
+    color: $secondary-color;
+    font-size: 1.5rem;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin-top: 12px;
+}

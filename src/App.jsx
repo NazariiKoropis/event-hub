@@ -6,6 +6,7 @@ import Footer from './components/layout/footer/Footer'
 //pages
 import Home from './pages/home/Home'
 import Events from './pages/events/Events'
+import EventDetails from './pages/eventsDetails/EventsDetails'
 import AboutUs from './pages/aboutUs/AboutUs'
 import UserProfile from './pages/users/userProfile/UserProfile'
 import OrgProfile from './pages/users/orgProfile/OrgProfile'
@@ -33,6 +34,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="events/:id" element={<EventDetails />} />
         </Routes>
       </main>
       <Footer />

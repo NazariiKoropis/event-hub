@@ -1,0 +1,54 @@
+@use "./../../../../assets/styles/variables" as *;
+
+.mapContainer {
+    margin-top: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: white;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+}
+
+.addressBox {
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.label {
+    font-size: 0.9rem;
+    color: $secondary-color;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.address {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.googleLink {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

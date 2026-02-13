@@ -1,5 +1,3 @@
-//styles
-import styles from './Home.module.scss'
 //compoments
 import Hero from './blocks/hero/Hero'
 import QuickCategory from './blocks/quickCategory/QuickCategory'

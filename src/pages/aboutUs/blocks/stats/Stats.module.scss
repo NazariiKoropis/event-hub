@@ -1,0 +1,32 @@
+// --- Stats ---
+.stats {
+    background-color: #f9f9f9; // Світло-сірий фон
+    padding: 60px 0;
+    margin-bottom: 80px;
+
+    .statsGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+
+    .statItem {
+        .statIcon {
+            font-size: 3rem;
+            color: #ff6b6b; // Твій акцентний
+            margin-bottom: 16px;
+        }
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #333;
+        }
+        p {
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+    }
+}

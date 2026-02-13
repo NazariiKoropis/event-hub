@@ -26,3 +26,26 @@ export const getAllEvents = async () => {
         return []
     }
 }
+
+
+export const getEventById = async (id) => {
+    try {
+
+        const eventfRef = ref(database, `events/${id}`);
+
+        const snapshot = await get(eventfRef);
+
+        if (snapshot.exists()) {
+            const data = snapshot.val()
+
+            return { id: id, ...data };
+        } else {
+            console.log("No data available with this id")
+            return null
+        }
+
+    } catch (error) {
+        console.error("Error fetching event by id:", error)
+        return null
+    }
+}
