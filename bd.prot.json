@@ -1,13 +1,40 @@
 {
     "bookings": {
-        "booking_id_001": {
+        "-OlfYUryZkl7GWSZ38DC": {
+            "eventId": "event_id_001",
+            "eventTitle": "React Summit Kyiv 2026",
+            "purchaseDate": 1771330993555,
+            "status": "active",
+            "ticketCount": 1,
+            "totalPrice": 1500,
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
+        },
+        "booking_id_101": {
+            "eventId": "event_id_001",
+            "eventTitle": "React Summit Kyiv 2026",
+            "purchaseDate": 1709280000000,
+            "status": "confirmed",
+            "ticketCount": 1,
+            "totalPrice": 1500,
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
+        },
+        "booking_id_102": {
             "eventId": "event_id_002",
             "eventTitle": "Jazz on the Roof",
-            "purchaseDate": 1709280000000,
+            "purchaseDate": 1709300000000,
             "status": "confirmed",
             "ticketCount": 2,
             "totalPrice": 900,
-            "userId": "user_auth_1"
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
+        },
+        "booking_id_103": {
+            "eventId": "event_id_003",
+            "eventTitle": "Бізнес-сніданок: Стартапи",
+            "purchaseDate": 1672531200000,
+            "status": "completed",
+            "ticketCount": 1,
+            "totalPrice": 200,
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
         }
     },
     "events": {
@@ -21,7 +48,7 @@
                 "lat": 50.449,
                 "lng": 30.523
             },
-            "organizerId": "user_auth_2",
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
             "price": 1500,
             "slug": "react-summit",
             "soldTickets": 45,
@@ -39,7 +66,7 @@
                 "lat": 49.84,
                 "lng": 24.029
             },
-            "organizerId": "user_auth_2",
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
             "price": 450,
             "slug": "jazz-on-the-roof",
             "soldTickets": 98,
@@ -50,30 +77,20 @@
         "event_id_003": {
             "category": "Business",
             "cityName": "Odesa",
-            "date": 1743417600000,
+            "date": 1672531200000,
             "description": "Нетворкінг для молодих підприємців. Кава та круасани включені.",
             "location": {
                 "address": "вул. Дерибасівська, 5",
                 "lat": 46.482,
                 "lng": 30.723
             },
-            "organizerId": "user_auth_2",
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
             "price": 200,
             "slug": "biznes-snidanok-startapy",
-            "soldTickets": 5,
-            "status": "active",
-            "title": "Бізнес-сніданок: Стартапи",
+            "soldTickets": 30,
+            "status": "passed",
+            "title": "Бізнес-сніданок: Стартапи (Минула подія)",
             "totalTickets": 30
-        }
-    },
-    "reviews": {
-        "review_id_001": {
-            "comment": "Дуже атмосферно! Рекомендую.",
-            "createdAt": 1709539200000,
-            "eventId": "event_id_002",
-            "rating": 5,
-            "userId": "user_auth_1",
-            "userName": "Павло З."
         }
     },
     "users": {
@@ -86,10 +103,10 @@
             "role": "organization"
         },
         "HFRiUtZKrCfaIOaH0nans5Xnq6C2": {
-            "displayName": "user",
+            "displayName": "Test User",
             "email": "user@gmail.com",
-            "firstName": "user",
-            "lastName": "user",
+            "firstName": "Test",
+            "lastName": "User",
             "registeredAt": 1770562762810,
             "role": "user"
         },
@@ -100,6 +117,17 @@
             "lastName": "admin",
             "registeredAt": 1770562686375,
             "role": "admin"
+        }
+    },
+    "requests": {
+        "req_id_001": {
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2",
+            "email": "user@gmail.com",
+            "displayName": "Test User",
+            "status": "pending",
+            "createdAt": 1771330999999,
+            "type": "upgrade_to_organizer",
+            "description": "Хочу продавати квитки на свої стендапи"
         }
     }
 }

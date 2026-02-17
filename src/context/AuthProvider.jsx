@@ -18,11 +18,9 @@ export function AuthProvider({ children }) {
       if (user) {
         setCurrentUser(user)
 
-        console.log('Context: User logged in, fetching role...')
         const role = await getUserRole(user.uid)
 
         setUserRole(role)
-        console.log('Context: Role set to:', role)
       } else {
         setCurrentUser(null)
         setUserRole(null)

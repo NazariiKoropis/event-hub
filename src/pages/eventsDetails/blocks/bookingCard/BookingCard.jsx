@@ -6,12 +6,17 @@ import Button from '../../../../components/ui/button/Button'
 
 //react
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { useAuth } from './../../../../context/AuthContext'
+
+//services
+import { createBooking } from './../../../../services/booking.service'
 
 export default function BookingCard({ event }) {
   const { currentUser } = useAuth()
   const [count, setCount] = useState(1)
+  const navigate = useNavigate()
 
   const price = event.price
 
@@ -29,8 +34,30 @@ export default function BookingCard({ event }) {
     }
   }
 
-  const handleOrder = () => {
-    alert(`Замовлено ${count} квитків на суму ${totalPrice} грн!`)
+  const handleOrder = async () => {
+    if (!confirm('Ви справді бажаєте забронювати квитки?')) return
+
+    const data = {
+      eventId: event.id,
+      eventTitle: event.title,
+      purchaseDate: Date.now(),
+      ticketCount: count,
+      totalPrice: totalPrice,
+      userId: currentUser.uid,
+      status: 'active',
+    }
+
+    // Можна додати тут лоадер, якщо хочеш (setLoading(true))
+
+    const bookingId = await createBooking(data)
+
+    if (bookingId) {
+      alert('Успішно! Квитки додано у ваш профіль.')
+
+      navigate('/user-profile')
+    } else {
+      alert('Сталася помилка при бронюванні 😢 Спробуйте ще раз.')
+    }
   }
 
   return (
@@ -72,6 +99,7 @@ export default function BookingCard({ event }) {
         <span className={styles.totalPrice}>{totalPrice} ₴</span>
       </div>
 
+      {/* TODO: create modal with order*/}
       <Button fullWidth onClick={handleOrder} disabled={!currentUser}>
         Купити квиток
       </Button>

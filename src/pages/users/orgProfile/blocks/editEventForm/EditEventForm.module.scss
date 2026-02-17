@@ -1,0 +1,89 @@
+.formContainer {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+
+    > * {
+        flex: 1;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.textareaWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .textarea {
+        padding: 10px;
+        border: 1px solid #ccc; // Або колір твого Input
+        border-radius: 8px;
+        font-family: inherit;
+        resize: vertical;
+
+        &:focus {
+            outline: 2px solid #ff6b6b; // Акцентний колір
+            border-color: transparent;
+        }
+    }
+}
+
+.selectWrapper,
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+        font-size: 14px;
+        color: #555;
+    }
+}
+
+.select,
+.dateInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 44px;
+    background: white;
+}
+
+.actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}

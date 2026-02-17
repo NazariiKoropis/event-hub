@@ -47,3 +47,13 @@
 .cardTitle {
     margin-bottom: 0.5rem;
 }
+
+.cardDesc {
+    font-size: 0.7rem;
+    @include tablet {
+        font-size: 0.9rem;
+    }
+    @include laptop {
+        font-size: 1rem;
+    }
+}
