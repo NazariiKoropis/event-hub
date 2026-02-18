@@ -9,7 +9,7 @@
     min-height: 400px;
 
     display: flex;
-    align-items: flex-end; // Притискаємо текст до низу (можна center, якщо хочеш по центру)
+    align-items: flex-end;
     padding-bottom: 60px;
     color: white;
     margin-bottom: 40px;
@@ -54,10 +54,10 @@
         align-items: center;
         gap: 10px;
         font-size: 1.1rem;
-        background: rgba(255, 255, 255, 0.1); // Напівпрозора плашка
+        background: rgba(255, 255, 255, 0.1);
         padding: 8px 16px;
         border-radius: 8px;
-        backdrop-filter: blur(5px); // Ефект скла
+        backdrop-filter: blur(5px);
 
         .icon {
             color: $secondary-color;

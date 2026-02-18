@@ -48,13 +48,13 @@
 
     .textarea {
         padding: 10px;
-        border: 1px solid #ccc; // Або колір твого Input
+        border: 1px solid #ccc;
         border-radius: 8px;
         font-family: inherit;
         resize: vertical;
 
         &:focus {
-            outline: 2px solid #ff6b6b; // Акцентний колір
+            outline: 2px solid #ff6b6b;
             border-color: transparent;
         }
     }

@@ -103,7 +103,11 @@ export default function BookingCard({ event }) {
       <Button fullWidth onClick={handleOrder} disabled={!currentUser}>
         Купити квиток
       </Button>
-
+      {!currentUser && (
+        <p className={styles.note}>
+          Для покупки квитка необхідно зареєструватись.
+        </p>
+      )}
       <p className={styles.note}>*Комісія сервісу вже включена у вартість</p>
     </div>
   )

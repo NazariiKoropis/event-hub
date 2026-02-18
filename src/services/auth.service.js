@@ -57,7 +57,7 @@ export const signUpUser = async (email, password, displayName, firstName, lastNa
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     const user = userCredential.user;
 
-    //profile update displayname
+
     await updateProfile(user, { displayName })
 
     const userDbRef = ref(database, 'users/' + user.uid)

@@ -49,7 +49,7 @@
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: #fff; // або твій колір фону
+    background: #fff;
     border-radius: 16px;
     border: 1px solid #eee;
     text-decoration: none;
@@ -58,7 +58,7 @@
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        border-color: var(--primary-color); // твій головний колір
+        border-color: var(--primary-color);
     }
 }
 

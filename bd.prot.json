@@ -1,12 +1,198 @@
 {
+    "users": {
+        "51o9b7E6aQPowkcB3RdnEkfweA82": {
+            "displayName": "Kyiv Events Org",
+            "email": "org_kyiv@gmail.com",
+            "firstName": "Kyiv",
+            "lastName": "Events",
+            "registeredAt": 1704067200000,
+            "role": "organization"
+        },
+        "HFRiUtZKrCfaIOaH0nans5Xnq6C2": {
+            "displayName": "Ivan Petrenko",
+            "email": "user@gmail.com",
+            "firstName": "Ivan",
+            "lastName": "Petrenko",
+            "registeredAt": 1704153600000,
+            "role": "user"
+        },
+        "sspgOjY14UWp9TeFJvHooA0eNiq1": {
+            "displayName": "Super Admin",
+            "email": "admin@gmail.com",
+            "firstName": "Super",
+            "lastName": "Admin",
+            "registeredAt": 1701388800000,
+            "role": "admin"
+        },
+        "user_music_fan": {
+            "displayName": "Maria Melnyk",
+            "email": "maria.m@gmail.com",
+            "firstName": "Maria",
+            "lastName": "Melnyk",
+            "registeredAt": 1705000000000,
+            "role": "user"
+        },
+        "user_tech_geek": {
+            "displayName": "Alex Coder",
+            "email": "alex.dev@gmail.com",
+            "firstName": "Alex",
+            "lastName": "Coder",
+            "registeredAt": 1705500000000,
+            "role": "user"
+        },
+        "org_lviv_vibes": {
+            "displayName": "Lviv Vibes",
+            "email": "lviv.vibes@gmail.com",
+            "firstName": "Lviv",
+            "lastName": "Vibes",
+            "registeredAt": 1706000000000,
+            "role": "organization"
+        },
+        "org_sport_ua": {
+            "displayName": "Sport UA",
+            "email": "sport.ua@gmail.com",
+            "firstName": "Sport",
+            "lastName": "UA",
+            "registeredAt": 1706500000000,
+            "role": "organization"
+        }
+    },
+    "events": {
+        "event_id_001": {
+            "category": "IT",
+            "cityName": "Kyiv",
+            "date": 1785326400000,
+            "description": "Найбільша конференція для React розробників у Східній Європі. 3 потоки, 50 спікерів.",
+            "location": {
+                "address": "Паркова дорога, 16а",
+                "lat": 50.449,
+                "lng": 30.523
+            },
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
+            "price": 1500,
+            "slug": "react-summit-kyiv-2026",
+            "soldTickets": 45,
+            "status": "active",
+            "title": "React Summit Kyiv 2026",
+            "totalTickets": 200
+        },
+        "event_id_002": {
+            "category": "Music",
+            "cityName": "Lviv",
+            "date": 1756540800000,
+            "description": "Атмосферний вечір джазу на даху з видом на Ратушу. Живий звук та вино.",
+            "location": {
+                "address": "вул. Староєврейська, 10",
+                "lat": 49.84,
+                "lng": 24.029
+            },
+            "organizerId": "org_lviv_vibes",
+            "price": 450,
+            "slug": "jazz-on-the-roof",
+            "soldTickets": 98,
+            "status": "active",
+            "title": "Jazz on the Roof",
+            "totalTickets": 100
+        },
+        "event_id_003": {
+            "category": "Business",
+            "cityName": "Odesa",
+            "date": 1672531200000,
+            "description": "Нетворкінг для стартапів та інвесторів. Пітчинг ідей.",
+            "location": {
+                "address": "вул. Дерибасівська, 5",
+                "lat": 46.482,
+                "lng": 30.723
+            },
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
+            "price": 200,
+            "slug": "biznes-snidanok-startapy",
+            "soldTickets": 30,
+            "status": "passed",
+            "title": "Бізнес-сніданок: Стартапи (2023)",
+            "totalTickets": 30
+        },
+        "event_id_004": {
+            "category": "Sport",
+            "cityName": "Kyiv",
+            "date": 1788000000000,
+            "description": "Благодійний марафон у центрі столиці. Дистанції: 5км, 10км, 21км.",
+            "location": {
+                "address": "Майдан Незалежності",
+                "lat": 50.4501,
+                "lng": 30.5234
+            },
+            "organizerId": "org_sport_ua",
+            "price": 600,
+            "slug": "kyiv-city-marathon",
+            "soldTickets": 150,
+            "status": "active",
+            "title": "Kyiv City Marathon 2026",
+            "totalTickets": 1000
+        },
+        "event_id_005": {
+            "category": "Art",
+            "cityName": "Lviv",
+            "date": 1760000000000,
+            "description": "Виставка сучасного українського мистецтва. Картини, скульптури, перформанс.",
+            "location": {
+                "address": "Палац Мистецтв, вул. Коперника 17",
+                "lat": 49.837,
+                "lng": 24.026
+            },
+            "organizerId": "org_lviv_vibes",
+            "price": 150,
+            "slug": "modern-art-exhibition",
+            "soldTickets": 12,
+            "status": "active",
+            "title": "Modern Art Exhibition",
+            "totalTickets": 300
+        },
+        "event_id_006": {
+            "category": "IT",
+            "cityName": "Kharkiv",
+            "date": 1782000000000,
+            "description": "Воркшоп по кібербезпеці. Практичні кейси та захист систем.",
+            "location": {
+                "address": "вул. Сумська, 10",
+                "lat": 49.9935,
+                "lng": 36.2304
+            },
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
+            "price": 800,
+            "slug": "cybersecurity-workshop",
+            "soldTickets": 5,
+            "status": "active",
+            "title": "CyberSecurity Workshop",
+            "totalTickets": 50
+        },
+        "event_id_007": {
+            "category": "Workshops",
+            "cityName": "Kyiv",
+            "date": 1775000000000,
+            "description": "Майстер-клас з гончарства. Зроби свою власну чашку за 3 години.",
+            "location": {
+                "address": "Андріївський узвіз, 22",
+                "lat": 50.460,
+                "lng": 30.516
+            },
+            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
+            "price": 500,
+            "slug": "pottery-masterclass",
+            "soldTickets": 18,
+            "status": "active",
+            "title": "Гончарний майстер-клас",
+            "totalTickets": 20
+        }
+    },
     "bookings": {
-        "-OlfYUryZkl7GWSZ38DC": {
+        "-OlkO3Sl9D4XtG3Md3nP": {
             "eventId": "event_id_001",
             "eventTitle": "React Summit Kyiv 2026",
-            "purchaseDate": 1771330993555,
+            "purchaseDate": 1771412145925,
             "status": "active",
-            "ticketCount": 1,
-            "totalPrice": 1500,
+            "ticketCount": 3,
+            "totalPrice": 4500,
             "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
         },
         "booking_id_101": {
@@ -25,7 +211,7 @@
             "status": "confirmed",
             "ticketCount": 2,
             "totalPrice": 900,
-            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
+            "userId": "user_music_fan"
         },
         "booking_id_103": {
             "eventId": "event_id_003",
@@ -35,99 +221,53 @@
             "ticketCount": 1,
             "totalPrice": 200,
             "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
-        }
-    },
-    "events": {
-        "event_id_001": {
-            "category": "IT",
-            "cityName": "Kyiv",
-            "date": 1785369600000,
-            "description": "Велика конференція для React розробників. Спікери з усього світу.",
-            "location": {
-                "address": "Паркова дорога, 16а",
-                "lat": 50.449,
-                "lng": 30.523
-            },
-            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
-            "price": 1500,
-            "slug": "react-summit",
-            "soldTickets": 45,
-            "status": "active",
-            "title": "React Summit Kyiv 2026",
-            "totalTickets": 200
         },
-        "event_id_002": {
-            "category": "Music",
-            "cityName": "Lviv",
-            "date": 1756540800000,
-            "description": "Вечір джазу на даху у центрі Львова. Живий звук.",
-            "location": {
-                "address": "вул. Староєврейська, 10",
-                "lat": 49.84,
-                "lng": 24.029
-            },
-            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
-            "price": 450,
-            "slug": "jazz-on-the-roof",
-            "soldTickets": 98,
-            "status": "active",
-            "title": "Jazz on the Roof",
-            "totalTickets": 100
+        "booking_id_104": {
+            "eventId": "event_id_004",
+            "eventTitle": "Kyiv City Marathon 2026",
+            "purchaseDate": 1772000000000,
+            "status": "confirmed",
+            "ticketCount": 5,
+            "totalPrice": 3000,
+            "userId": "org_sport_ua"
         },
-        "event_id_003": {
-            "category": "Business",
-            "cityName": "Odesa",
-            "date": 1672531200000,
-            "description": "Нетворкінг для молодих підприємців. Кава та круасани включені.",
-            "location": {
-                "address": "вул. Дерибасівська, 5",
-                "lat": 46.482,
-                "lng": 30.723
-            },
-            "organizerId": "51o9b7E6aQPowkcB3RdnEkfweA82",
-            "price": 200,
-            "slug": "biznes-snidanok-startapy",
-            "soldTickets": 30,
-            "status": "passed",
-            "title": "Бізнес-сніданок: Стартапи (Минула подія)",
-            "totalTickets": 30
-        }
-    },
-    "users": {
-        "51o9b7E6aQPowkcB3RdnEkfweA82": {
-            "displayName": "organization",
-            "email": "organization@gmail.com",
-            "firstName": "organization",
-            "lastName": "organization",
-            "registeredAt": 1770562823459,
-            "role": "organization"
-        },
-        "HFRiUtZKrCfaIOaH0nans5Xnq6C2": {
-            "displayName": "Test User",
-            "email": "user@gmail.com",
-            "firstName": "Test",
-            "lastName": "User",
-            "registeredAt": 1770562762810,
-            "role": "user"
-        },
-        "sspgOjY14UWp9TeFJvHooA0eNiq1": {
-            "displayName": "admin",
-            "email": "admin@gmail.com",
-            "firstName": "admin",
-            "lastName": "admin",
-            "registeredAt": 1770562686375,
-            "role": "admin"
+        "booking_id_105": {
+            "eventId": "event_id_007",
+            "eventTitle": "Гончарний майстер-клас",
+            "purchaseDate": 1773000000000,
+            "status": "confirmed",
+            "ticketCount": 2,
+            "totalPrice": 1000,
+            "userId": "user_tech_geek"
         }
     },
     "requests": {
         "req_id_001": {
-            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2",
-            "email": "user@gmail.com",
-            "displayName": "Test User",
-            "status": "pending",
             "createdAt": 1771330999999,
+            "description": "Хочу продавати квитки на свої стендапи",
+            "displayName": "Test User",
+            "email": "user@gmail.com",
+            "status": "pending",
             "type": "upgrade_to_organizer",
-            "description": "Хочу продавати квитки на свої стендапи"
+            "userId": "HFRiUtZKrCfaIOaH0nans5Xnq6C2"
+        },
+        "req_id_002": {
+            "createdAt": 1771400000000,
+            "description": "Організовую локальні музичні фестивалі",
+            "displayName": "Maria Melnyk",
+            "email": "maria.m@gmail.com",
+            "status": "pending",
+            "type": "upgrade_to_organizer",
+            "userId": "user_music_fan"
+        },
+        "req_id_003": {
+            "createdAt": 1770000000000,
+            "description": "Спамерський запит",
+            "displayName": "Spammer",
+            "email": "spam@gmail.com",
+            "status": "rejected",
+            "type": "upgrade_to_organizer",
+            "userId": "some_random_id"
         }
     }
 }

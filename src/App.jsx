@@ -24,8 +24,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/user-profile" element={<UserProfile />} />
-          <Route path="/org-profile" element={<OrgProfile />} />
+          <Route
+            path="/user-profile"
+            element={
+              <ProtectedRoute allowedRoles={['user']}>
+                <UserProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/org-profile"
+            element={
+              <ProtectedRoute allowedRoles={['organization']}>
+                <OrgProfile />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="admin"
             element={

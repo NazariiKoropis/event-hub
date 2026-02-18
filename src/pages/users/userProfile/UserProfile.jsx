@@ -16,7 +16,6 @@ import { getBookingsByUserID } from '../../../services/booking.service'
 import { getEventById } from './../../../services/event.service'
 import { createRequest } from '../../../services/request.service'
 
-//
 // utils
 import { getEventImage } from '../../../utils/imageUtil'
 
@@ -145,7 +144,7 @@ export default function UserProfile() {
             </div>
           </aside>
 
-          <main className={styles.contentArea}>
+          <section className={styles.contentArea}>
             <div className={styles.tabs}>
               <button
                 className={`${styles.tab} ${activeTab === 'active' ? styles.active : ''}`}
@@ -219,7 +218,7 @@ export default function UserProfile() {
                 </p>
               )}
             </div>
-          </main>
+          </section>
         </div>
       </Container>
     </div>

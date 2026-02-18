@@ -49,7 +49,6 @@ export default function LoginForm({ onLoginSuccess }) {
     if (error) {
       setErrors({ form: error })
     } else {
-      console.log('Logged in user:', user)
       if (onLoginSuccess) onLoginSuccess(user)
     }
   }
@@ -95,9 +94,9 @@ export default function LoginForm({ onLoginSuccess }) {
         error={errors.password}
       />
 
-      <Button onClick={handleTestAdmin}>Test Admin</Button>
-      <Button onClick={handleTestUser}>Test user</Button>
-      <Button onClick={handleTestOrg}>Test org</Button>
+      <Button onClick={handleTestAdmin}>Зайти як адміністратор</Button>
+      <Button onClick={handleTestUser}>Зайти як користувач</Button>
+      <Button onClick={handleTestOrg}>Зайти як організація</Button>
 
       <Button type="submit" fullWidth disabled={isLoading}>
         {isLoading ? 'Вхід...' : 'Увійти'}
