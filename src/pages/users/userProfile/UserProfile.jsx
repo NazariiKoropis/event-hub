@@ -12,6 +12,7 @@ import { useState, useEffect } from 'react'
 import { useAuth } from '../../../context/AuthContext'
 
 // services
+import { logoutUser } from './../../../services/auth.service'
 import { getBookingsByUserID } from '../../../services/booking.service'
 import { getEventById } from './../../../services/event.service'
 import { createRequest } from '../../../services/request.service'
@@ -23,7 +24,7 @@ import { getEventImage } from '../../../utils/imageUtil'
 import { FaTicketAlt, FaHistory, FaSignOutAlt } from 'react-icons/fa'
 
 export default function UserProfile() {
-  const { currentUser, logout } = useAuth()
+  const { currentUser } = useAuth()
   const [activeTab, setActiveTab] = useState('active')
 
   const [tickets, setTickets] = useState([])
@@ -58,7 +59,7 @@ export default function UserProfile() {
 
   const handleLogout = async () => {
     try {
-      await logout()
+      await logoutUser()
     } catch (error) {
       console.error('Failed to log out', error)
     }
@@ -137,7 +138,7 @@ export default function UserProfile() {
               <button className={styles.logoutBtn} onClick={handleLogout}>
                 <FaSignOutAlt /> Вийти з акаунту
               </button>
-              {/*TODO: написати логіку надсилання запиту*/}
+
               <Button onClick={handleSendRequest} className={styles.logoutBtn}>
                 Стати організатором
               </Button>
