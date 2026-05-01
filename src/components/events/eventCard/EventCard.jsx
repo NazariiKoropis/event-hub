@@ -9,6 +9,15 @@ import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa'
 import { getEventImage } from '../../../utils/imageUtil'
 import placeholder from '../../../assets/events/placeholder.png'
 
+const CATEGORY_LABELS = {
+  Music: 'Музика',
+  IT: 'IT',
+  Business: 'Бізнес',
+  Art: 'Мистецтво',
+  Sport: 'Спорт',
+  Workshops: 'Воркшопи',
+}
+
 export default function EventCard({ event }) {
   const date = new Date(event.date).toLocaleDateString('uk-UA', {
     day: 'numeric',
@@ -22,7 +31,9 @@ export default function EventCard({ event }) {
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <img src={imageSrc} alt={event.title} className={styles.image} />
-        <span className={styles.category}>{event.category}</span>
+        <span className={styles.category}>
+          {CATEGORY_LABELS[event.category] || event.category}
+        </span>
       </div>
 
       <div className={styles.content}>

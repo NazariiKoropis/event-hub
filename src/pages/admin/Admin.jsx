@@ -25,7 +25,7 @@ export default function admin() {
             {currentUser?.email?.[0].toUpperCase() || 'A'}
           </div>
           <div>
-            <h3>Admin Panel</h3>
+            <h3>Адмін-панель</h3>
             <p className={styles.email}>{currentUser?.email}</p>
           </div>
         </div>

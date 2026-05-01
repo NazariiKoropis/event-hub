@@ -19,7 +19,7 @@ const CATEGORIES = [
     icon: <FaBusinessTime />,
     color: '#4ECDC4',
   },
-  { id: 'IT', label: 'IT & Tech', icon: <CiLaptop />, color: '#45B7D1' },
+  { id: 'IT', label: 'IT та технології', icon: <CiLaptop />, color: '#45B7D1' },
   { id: 'Art', label: 'Мистецтво', icon: <FaPaintBrush />, color: '#96CEB4' },
   {
     id: 'Sport',

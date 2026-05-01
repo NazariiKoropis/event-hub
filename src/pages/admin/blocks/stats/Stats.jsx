@@ -9,6 +9,16 @@ import {
   FaMoneyBillWave,
 } from 'react-icons/fa'
 
+const CATEGORY_LABELS = {
+  Music: 'Музика',
+  IT: 'IT',
+  Business: 'Бізнес',
+  Art: 'Мистецтво',
+  Sport: 'Спорт',
+  Workshops: 'Воркшопи',
+  Other: 'Інше',
+}
+
 export default function Stats() {
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -81,7 +91,9 @@ export default function Stats() {
         <div className={styles.chart}>
           {Object.entries(stats.categoryStats).map(([category, count]) => (
             <div key={category} className={styles.chartRow}>
-              <span className={styles.catLabel}>{category}</span>
+              <span className={styles.catLabel}>
+                {CATEGORY_LABELS[category] || category}
+              </span>
               <div className={styles.barContainer}>
                 <div
                   className={styles.bar}

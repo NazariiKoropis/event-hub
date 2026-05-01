@@ -17,9 +17,7 @@ export default function ProtectedRoute({ children, allowedRoles = [] }) {
   }
 
   if (allowedRoles.length > 0 && !allowedRoles.includes(userRole)) {
-    console.warn(
-      `Access Denied. User role: ${userRole}, Required: ${allowedRoles}`,
-    )
+    console.warn(`Доступ заборонено. Роль користувача: ${userRole}, потрібно: ${allowedRoles}`)
     return <Navigate to="/" replace />
   }
 

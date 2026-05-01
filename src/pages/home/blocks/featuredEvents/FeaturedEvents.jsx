@@ -57,7 +57,6 @@ export default function FeaturedEvents() {
         >
           {events.map((event) => (
             <SwiperSlide key={event.id} className={styles.slide}>
-              {/* Тут твоя картка події */}
               <EventCard event={event} />
             </SwiperSlide>
           ))}

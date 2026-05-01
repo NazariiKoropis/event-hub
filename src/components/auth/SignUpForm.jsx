@@ -21,7 +21,7 @@ export default function SignUpForm({ onAuthSuccess }) {
   const validate = () => {
     const newErrors = {}
 
-    if (!displayName.trim()) newErrors.displayName = 'Введіть превдонім'
+    if (!displayName.trim()) newErrors.displayName = 'Введіть псевдонім'
     if (!firstName.trim()) newErrors.firstName = "Введіть ім'я"
     if (!lastName.trim()) newErrors.lastName = 'Введіть прізвище'
     if (!email) newErrors.email = 'Введіть email'

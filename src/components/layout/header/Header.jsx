@@ -101,7 +101,7 @@ export default function Header() {
           <button
             className={`${styles.burgerButton} ${isMenuOpen ? styles['burgerButton--active'] : ''}`}
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label="Відкрити меню"
           >
             <span />
             <span />
@@ -124,15 +124,15 @@ export default function Header() {
                     <UserProfileLogo className={styles.userProfileLogo} />
                   </NavLink>
                   <Button variant="ghost" onClick={handleLogout}>
-                    Log out
+                    Вийти
                   </Button>
                 </div>
               ) : (
                 <div className={styles.headerButtons}>
                   <Button variant="ghost" onClick={() => openModal('login')}>
-                    Login
+                    Увійти
                   </Button>
-                  <Button onClick={() => openModal('signup')}>Sign Up</Button>
+                  <Button onClick={() => openModal('signup')}>Реєстрація</Button>
                 </div>
               )}
             </li>
@@ -170,15 +170,15 @@ export default function Header() {
                   <UserProfileLogo className={styles.userProfileLogo} />
                 </NavLink>
                 <Button variant="ghost" fullWidth onClick={handleLogout}>
-                  Log out
+                  Вийти
                 </Button>
               </div>
             ) : (
               <div className={styles.headerButtons}>
                 <Button variant="ghost" onClick={() => openModal('login')}>
-                  Login
+                  Увійти
                 </Button>
-                <Button onClick={() => openModal('signup')}>Sign Up</Button>
+                <Button onClick={() => openModal('signup')}>Реєстрація</Button>
               </div>
             )}
           </nav>

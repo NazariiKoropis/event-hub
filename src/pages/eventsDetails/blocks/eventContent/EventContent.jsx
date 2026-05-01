@@ -44,7 +44,7 @@ export default function EventContent({ event }) {
             {event.totalTickets > 0 ? (
               <span>{event.totalTickets} шт.</span>
             ) : (
-              <span style={{ color: 'red' }}>Sold Out</span>
+              <span style={{ color: 'red' }}>Квитки розпродано</span>
             )}
           </li>
         </ul>

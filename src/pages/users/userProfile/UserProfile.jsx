@@ -61,7 +61,7 @@ export default function UserProfile() {
     try {
       await logoutUser()
     } catch (error) {
-      console.error('Failed to log out', error)
+      console.error('Не вдалося вийти з акаунту', error)
     }
   }
 
@@ -123,7 +123,7 @@ export default function UserProfile() {
             <div className={styles.avatar}>
               <img
                 src={`https://ui-avatars.com/api/?name=${currentUser.email}&background=0D8ABC&color=fff`}
-                alt="User Avatar"
+                alt="Аватар користувача"
               />
             </div>
 

@@ -30,7 +30,7 @@ export const getSystemStats = async () => {
 
         const categoryStats = {}
         eventsData.forEach(event => {
-            const cat = event.category || 'Other'
+            const cat = event.category || 'Інше'
 
             categoryStats[cat] = (categoryStats[cat] || 0) + 1
         })
@@ -44,7 +44,7 @@ export const getSystemStats = async () => {
         }
 
     } catch (error) {
-        console.error("Error fetching stats:", error)
+        console.error("Помилка завантаження статистики:", error)
         return null
     }
 }
